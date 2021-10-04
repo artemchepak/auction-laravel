@@ -14,9 +14,10 @@
     <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#" class="nav-link px-2 text-white">Home</a></li>
-                <li><a href="#" class="nav-link px-2 text-white">Products</a></li>
-                <li><a href="#" class="nav-link px-2 text-white">My auctions</a></li>
+                <li><a href="{{route('index')}}" class="nav-link px-2 text-white">Home</a></li>
+                <li><a href="{{route('all-products')}}" class="nav-link px-2 text-white">Products</a></li>
+                <li><a href="{{route('all-auctions')}}" class="nav-link px-2 text-white">My auctions</a></li>
+                <li><a href="{{route('all-bids')}}" class="nav-link px-2 text-white">My bids</a></li>
             </ul>
 
             <div class="text-end">
