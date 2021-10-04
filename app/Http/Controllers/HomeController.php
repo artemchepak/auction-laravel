@@ -11,11 +11,6 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function showProducts()
-    {
-        return view('products');
-    }
-
     public function showAuctions()
     {
         return view('auctions');
