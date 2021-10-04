@@ -18,9 +18,9 @@
         <tbody>
             @foreach($products as $product)
                 <tr>
-                    <td style="height: 120px" class="align-middle">
-                        <img src="{{asset("storage/$product->image")}}" class="h-100 mb-3">
-                        <br><a href="#">View details</a>
+                    <td class="align-middle">
+                        <img style="max-height: 120px; width: 120px"  src="{{asset("storage/$product->image")}}" class="mb-3">
+                        <br><a href="{{route('products.show', $product->id)}}">View details</a>
                     </td>
                     <td class="align-middle">{{$product->title}}</td>
                     <td class="align-middle">{{$product->description}}</td>

@@ -47,14 +47,13 @@ class ProductController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
+     * @param Product $product
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function show(Product $product)
     {
-        //
+        $product = Product::find($product->id);
+        return view('product-page', compact('product'));
     }
 
     /**
