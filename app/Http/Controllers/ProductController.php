@@ -40,6 +40,7 @@ class ProductController extends Controller
         $product->image = $imagePath;
         $product->price = $request->input('price');
         $product->buy_now_price = $request->input('buynowprice');
+        $product->auction_end_date = $request->input('enddate');
         $product->save();
 
         return redirect()->route('products.index');

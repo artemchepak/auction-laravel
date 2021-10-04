@@ -34,6 +34,10 @@
                         <input type="number" class="form-control" id="buynowprice" name="buynowprice">
                     </div>
                 </div>
+                <div class="mb-3">
+                    <label for="enddate" class="form-label">Auction end date</label>
+                    <input type="date" class="form-control" id="enddate" name="enddate">
+                </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

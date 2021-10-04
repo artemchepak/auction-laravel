@@ -21,6 +21,7 @@ class CreateProductsTable extends Migration
             $table->string('image');
             $table->float('price');
             $table->float('buy_now_price')->nullable();
+            $table->date('auction_end_date');
             $table->timestamps();
         });
     }
