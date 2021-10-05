@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
-Route::get('/auctions', [HomeController::class, 'showAuctions'])->name('all-auctions');
+Route::get('/user/lots', [HomeController::class, 'showUserLots'])->name('my-lots');
 Route::get('/bids', [HomeController::class, 'showBids'])->name('all-bids');
 
-Route::resource('products',LotController::class);
+Route::resource('lots',LotController::class);

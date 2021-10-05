@@ -6,7 +6,7 @@
 
     <div class="row justify-content-center align-items-center h-100">
         <div class="bd-example w-50 pt-5 justify-content-center">
-            <form action="{{route('products.store')}}" method="post" enctype="multipart/form-data">
+            <form action="{{route('lots.store')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>

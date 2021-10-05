@@ -11,9 +11,9 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function showAuctions()
+    public function showUserLots()
     {
-        return view('auctions');
+        return view('user-lots');
     }
 
     public function showBids()
