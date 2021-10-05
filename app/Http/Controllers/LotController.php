@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
+use App\Models\Lot;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class LotController extends Controller
 {
     /**
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
-        $products = Product::all();
-        return view('products', compact('products'));
+        $lots = Lot::all();
+        return view('lots', compact('lots'));
     }
 
     /**
@@ -33,36 +33,36 @@ class ProductController extends Controller
         $image = $request->file('image');
         $imagePath = $image->store('products');
 
-        $product = new Product();
-        $product->title = $request->input('title');
-        $product->description = $request->input('description');
-        $product->condition = $request->input('condition');
-        $product->image = $imagePath;
-        $product->price = $request->input('price');
-        $product->buy_now_price = $request->input('buynowprice');
-        $product->auction_end_date = $request->input('enddate');
-        $product->save();
+        $lot= new Lot();
+        $lot->title = $request->input('title');
+        $lot->description = $request->input('description');
+        $lot->condition = $request->input('condition');
+        $lot->image = $imagePath;
+        $lot->price = $request->input('price');
+        $lot->buy_now_price = $request->input('buynowprice');
+        $lot->auction_end_date = $request->input('enddate');
+        $lot->save();
 
         return redirect()->route('products.index');
     }
 
     /**
-     * @param Product $product
+     * @param Lot $lot
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function show(Product $product)
+    public function show(Lot $lot)
     {
-        $product = Product::find($product->id);
+        $lot= Lot::find($lot->id);
         return view('product-page', compact('product'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\Lot  $lot
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit(Lot $lot)
     {
         //
     }
@@ -71,10 +71,10 @@ class ProductController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\Lot  $lot
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, Lot $lot)
     {
         //
     }
@@ -82,10 +82,10 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\Lot  $lot
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy(Lot $lot)
     {
         //
     }

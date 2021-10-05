@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\LotController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,4 +19,4 @@ Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/auctions', [HomeController::class, 'showAuctions'])->name('all-auctions');
 Route::get('/bids', [HomeController::class, 'showBids'])->name('all-bids');
 
-Route::resource('products',ProductController::class);
+Route::resource('products',LotController::class);
