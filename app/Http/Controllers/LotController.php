@@ -53,7 +53,8 @@ class LotController extends Controller
     public function show(Lot $lot)
     {
         $lot= Lot::find($lot->id);
-        return view('lot-page', compact('lot'));
+        $bids = Lot::find($lot->id)->bids()->get();
+        return view('lot-page', compact('lot', 'bids'));
     }
 
     /**

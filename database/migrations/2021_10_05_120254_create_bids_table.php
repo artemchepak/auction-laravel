@@ -15,6 +15,8 @@ class CreateBidsTable extends Migration
     {
         Schema::create('bids', function (Blueprint $table) {
             $table->id();
+            $table->integer('lot_id')->unsigned();
+            $table->float('bid_price');
             $table->timestamps();
         });
     }
