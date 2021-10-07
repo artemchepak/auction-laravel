@@ -21,7 +21,7 @@ class LotController extends Controller
      */
     public function create()
     {
-        return view('add-auction');
+        return view('add-lot');
     }
 
     /**
