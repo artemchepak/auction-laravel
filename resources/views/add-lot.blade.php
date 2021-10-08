@@ -39,6 +39,8 @@
                     <input type="date" class="form-control" id="enddate" name="enddate">
                 </div>
 
+                <input type="hidden" name="seller_id" value="{{$seller_id}}">
+
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>

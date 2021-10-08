@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Lot;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LotController extends Controller
 {
@@ -21,7 +22,8 @@ class LotController extends Controller
      */
     public function create()
     {
-        return view('add-lot');
+        $sellerId = Auth::id();
+        return view('add-lot', ['seller_id' => $sellerId]);
     }
 
     /**
@@ -41,9 +43,10 @@ class LotController extends Controller
         $lot->price = $request->input('price');
         $lot->buy_now_price = $request->input('buynowprice');
         $lot->auction_end_date = $request->input('enddate');
+        $lot->seller_id = $request->input('seller_id');
         $lot->save();
 
-        return redirect()->route('products.index');
+        return redirect()->route('lots.index');
     }
 
     /**

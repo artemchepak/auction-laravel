@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Lot;
 use Illuminate\Http\Request;
-
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('home');
+        $lastLots = Lot::orderBy('id', 'desc')->take(5)->get();
+        return view('home', compact('lastLots'));
     }
 
     public function showUserLots()
