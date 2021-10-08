@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Products page</h1>
+    <h1>All lots</h1>
 
     <table class="table">
         <thead>

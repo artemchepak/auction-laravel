@@ -3,6 +3,7 @@
 use App\Http\Controllers\BidController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LotController;
+use App\Models\Bid;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,5 +25,7 @@ Route::get('/bids', [HomeController::class, 'showBids'])->name('all-bids');
 Route::resource('lots',LotController::class);
 
 Route::post('/lots/{id}/bid', [BidController::class, 'makeBid'])->name('makeBid');
+Route::post('/lots/{id}/deleteBid', [BidController::class, 'deleteBid'])->name('deleteBid');
 
 Auth::routes();
+

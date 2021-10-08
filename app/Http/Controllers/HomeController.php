@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bid;
 use App\Models\Lot;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 class HomeController extends Controller
 {
     public function index()
@@ -14,11 +17,15 @@ class HomeController extends Controller
 
     public function showUserLots()
     {
-        return view('user-lots');
+        $userId = Auth::id();
+        $lots = Lot::where('seller_id', $userId)->get();
+        return view('user-lots', compact('lots'));
     }
 
     public function showBids()
     {
-        return view('bids');
+        $userId = Auth::id();
+        $userBids = Bid::where('buyer_id', $userId)->get();
+        return view('user-bids', compact('userBids'));
     }
 }

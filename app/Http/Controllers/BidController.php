@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Bid;
 use App\Models\Lot;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BidController extends Controller
 {
@@ -25,6 +26,7 @@ class BidController extends Controller
             $bid = new Bid();
             $bid->bid_price = $requestBid;
             $bid->lot_id = $lotId;
+            $bid->buyer_id = Auth::id();
             $bid->save();
         } else {
             $request->session()->flash('error', 'Your bid must be greater than the basic price and the last bid');
@@ -32,4 +34,10 @@ class BidController extends Controller
 
         return redirect()->back();
     }
+
+    public function deleteBid($id){
+        Bid::find($id)->delete();
+        return redirect()->back();
+    }
+
 }
