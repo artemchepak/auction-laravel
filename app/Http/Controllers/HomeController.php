@@ -22,10 +22,14 @@ class HomeController extends Controller
         return view('user-lots', compact('lots'));
     }
 
-    public function showBids()
+    public function showUserBids()
     {
         $userId = Auth::id();
         $userBids = Bid::where('buyer_id', $userId)->get();
         return view('user-bids', compact('userBids'));
+    }
+
+    public function showBids(){
+
     }
 }

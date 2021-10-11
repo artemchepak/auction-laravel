@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/user/lots', [HomeController::class, 'showUserLots'])->name('my-lots');
+Route::get('/user/bids', [HomeController::class, 'showUserBids'])->name('user-bids');
 Route::get('/bids', [HomeController::class, 'showBids'])->name('all-bids');
 
 Route::resource('lots',LotController::class);
